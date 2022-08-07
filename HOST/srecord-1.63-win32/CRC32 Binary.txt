@@ -1,0 +1,10 @@
+srec_cat.exe Blink.bin -binary -crop 0x0000 0xE2C -fill 0xFF 0x0000 0xE2C -stm32-l-e 0xE2C -o Blink-CRC.bin -binary
+
+-binary: Chỉ định định dạng tệp
+
+-crop 0x0000 0x8FFC: Chỉ định phạm vi để đọc từ tệp đầu vào
+
+-fill 0xFF 0x0000 0x8FFC: Chỉ định rằng không gian trống trong tệp đầu ra được lấp đầy bằng 0xFF
+
+-stm32-le 0x8FFC: Lưu CRC ở định dạng endian nhỏ ở 0x8FFC
+[출처] [STM32 HAL] CRC (Cyclic Redundancy Check) + Flash Integrity Check + SRecord|작성자 이지훈
